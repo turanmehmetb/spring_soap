@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
+import org.springframework.ws.soap.client.SoapFaultClientException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = WebClientConfig.class, loader = AnnotationConfigContextLoader.class)
@@ -61,9 +62,15 @@ public class ClientLiveTest {
         CancelResponseType response = client.cancelReservation(1);
         assertEquals(1, response.getReservationId());
     }
+    
+    @Test(expected = SoapFaultClientException.class)
+    public void test6() {
+        CancelResponseType response = client.cancelReservation(1);
+        assertEquals(1, response.getReservationId());
+    }
 
     @Test
-    public void test6() {
+    public void test7() {
         ListReservationsResponseType response = client.listReservations();
         assertEquals(1, response.getReservations().size());
     }

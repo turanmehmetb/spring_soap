@@ -24,7 +24,9 @@ public class CarRentalRepository {
 	}
 
 	public int deleteReservation(int reservationId) {
-		reservations.removeIf(element -> element.reservationId == reservationId);
+		Reservation reservation = reservations.stream().filter(res -> res.getReservationId() == reservationId).findAny().orElse(null);
+		if(reservation != null) reservations.remove(reservation);
+		else return -1;
 
 		return reservationId;
 	}

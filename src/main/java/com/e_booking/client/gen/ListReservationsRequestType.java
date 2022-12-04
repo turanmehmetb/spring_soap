@@ -32,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "")
-@XmlRootElement(name = "ListReservationsRequestType")
+@XmlRootElement(name = "ListReservation")
 public class ListReservationsRequestType {
 
 

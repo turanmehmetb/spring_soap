@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
 
 })
-@XmlRootElement(name = "ReserveRequestType")
+@XmlRootElement(name = "AddReservation")
 public class ReserveRequestType {
 
     @XmlElement(required = true)

@@ -36,9 +36,12 @@ public class CarRentalEndpoint {
 
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "CancelRequest")
 	@ResponsePayload
-	public CancelResponseType cancelReservation(@RequestPayload CancelRequestType request) {
+	public CancelResponseType cancelReservation(@RequestPayload CancelRequestType request) throws NotFoundException {
 		CancelResponseType response = new CancelResponseType();
-		response.setReservationId(repository.deleteReservation(request.getReservationId()));
+		int deletedId = repository.deleteReservation(request.getReservationId());
+		
+		if(deletedId == -1) throw new NotFoundException("Reservation is not exist!");
+		else response.setReservationId(deletedId);
 
 	    return response;
 	}
