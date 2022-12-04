@@ -21,6 +21,7 @@ public class CarRentalClient extends WebServiceGatewaySupport {
     public CancelResponseType cancelReservation(int reservationId) {
     	CancelRequestType request = new CancelRequestType();
     	request.setReservationId(reservationId);
+    	System.out.print(reservationId);
     	CancelResponseType response = (CancelResponseType) getWebServiceTemplate().marshalSendAndReceive(request);
         return response;
     }
