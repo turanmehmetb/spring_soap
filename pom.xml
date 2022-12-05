@@ -37,50 +37,58 @@
    
   </dependencies>
   
-  <build>
-  	<plugins>
-  		<plugin>
-    		<groupId>org.codehaus.mojo</groupId>
-		    <artifactId>jaxb2-maven-plugin</artifactId>
-		    <version>1.6</version>
-		    <executions>
-		        <execution>
-		            <id>xjc</id>
-		            <goals>
-		                <goal>xjc</goal>
-		            </goals>
-		        </execution>
-		    </executions>
-		    <configuration>
-		        <schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory>
-		        <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
-		        <clearOutputDir>false</clearOutputDir>
-		    </configuration>
-		</plugin>
-		
-		<plugin> 
-		    <groupId>org.jvnet.jaxb2.maven2</groupId>
-		    <artifactId>maven-jaxb2-plugin</artifactId>
-		    <version>0.14.0</version>
-		    <executions>
-		         <execution>
-		              <goals>
-		                  <goal>generate</goal>
-		              </goals>
-		         </execution>
-		    </executions>
-		    <configuration>
-		          <schemaLanguage>WSDL</schemaLanguage>
-		          <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-		          <outputDirectory>com.e_booking.client.gen</outputDirectory>
-		          <schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
-		       	  <clearOutputDir>false</clearOutputDir>
-		          <schemaIncludes>
-		             <include>CarRentalService.wsdl</include>
-		          </schemaIncludes>
-		    </configuration>
-		</plugin>
-  	</plugins>
-  </build>
+  <profiles>
+  	<profile>
+	      <id>plugins</id>
+
+		  <build>
+		  	<plugins>
+		  		<plugin>
+		    		<groupId>org.codehaus.mojo</groupId>
+				    <artifactId>jaxb2-maven-plugin</artifactId>
+				    <version>1.6</version>
+				    <executions>
+				        <execution>
+				            <id>xjc</id>
+				            <goals>
+				                <goal>xjc</goal>
+				            </goals>
+				        </execution>
+				    </executions>
+				    <configuration>
+				        <schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory>
+				        <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+				        <clearOutputDir>false</clearOutputDir>
+				    </configuration>
+				</plugin>
+				
+				<plugin> 
+				    <groupId>org.jvnet.jaxb2.maven2</groupId>
+				    <artifactId>maven-jaxb2-plugin</artifactId>
+				    <version>0.14.0</version>
+				    <executions>
+				         <execution>
+				              <goals>
+				                  <goal>generate</goal>
+				              </goals>
+				         </execution>
+				    </executions>
+				    <configuration>
+				          <schemaLanguage>WSDL</schemaLanguage>
+				          <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
+				          <outputDirectory>com.e_booking.client.gen</outputDirectory>
+				          <schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
+				       	  <clearOutputDir>false</clearOutputDir>
+				          <schemaIncludes>
+				             <include>CarRentalService.wsdl</include>
+				          </schemaIncludes>
+				    </configuration>
+				</plugin>
+		  	</plugins>
+		  </build>
+		  	
+  	</profile>
+  
+  </profiles>
   
 </project>
