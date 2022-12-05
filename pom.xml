@@ -37,9 +37,6 @@
    
   </dependencies>
   
-  <profiles>
-  	<profile>
-	      <id>plugins</id>
 
 		  <build>
 		  	<plugins>
@@ -57,10 +54,10 @@
 				    </executions>
 				    <configuration>
 				        <schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory>
-				        <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
 				        <clearOutputDir>false</clearOutputDir>
 				    </configuration>
 				</plugin>
+   
 				
 				<plugin> 
 				    <groupId>org.jvnet.jaxb2.maven2</groupId>
@@ -75,10 +72,7 @@
 				    </executions>
 				    <configuration>
 				          <schemaLanguage>WSDL</schemaLanguage>
-				          <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-				          <outputDirectory>com.e_booking.client.gen</outputDirectory>
 				          <schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
-				       	  <clearOutputDir>false</clearOutputDir>
 				          <schemaIncludes>
 				             <include>CarRentalService.wsdl</include>
 				          </schemaIncludes>
@@ -86,9 +80,6 @@
 				</plugin>
 		  	</plugins>
 		  </build>
-		  	
-  	</profile>
-  
-  </profiles>
+
   
 </project>
