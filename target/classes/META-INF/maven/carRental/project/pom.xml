@@ -68,7 +68,7 @@
 		                  <goal>generate</goal>
 		              </goals>
 		         </execution>
-		    </executions>
+		    </executions> 
 		    <configuration>
 		          <schemaLanguage>WSDL</schemaLanguage>
 		          <generateDirectory>${project.basedir}/src/main/java</generateDirectory>

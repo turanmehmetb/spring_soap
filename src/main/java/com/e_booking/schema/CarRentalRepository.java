@@ -1,9 +1,10 @@
-package com.e_booking.schema.rental;
+package com.e_booking.schema;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
+
 
 @Component
 public class CarRentalRepository {

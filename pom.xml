@@ -37,7 +37,7 @@
    
   </dependencies>
   
-<build>
+  <build>
   	<plugins>
   		<plugin>
     		<groupId>org.codehaus.mojo</groupId>
@@ -57,7 +57,7 @@
 		        <clearOutputDir>false</clearOutputDir>
 		    </configuration>
 		</plugin>
-
+		
 		<plugin> 
 		    <groupId>org.jvnet.jaxb2.maven2</groupId>
 		    <artifactId>maven-jaxb2-plugin</artifactId>
@@ -68,7 +68,7 @@
 		                  <goal>generate</goal>
 		              </goals>
 		         </execution>
-		    </executions>
+		    </executions> 
 		    <configuration>
 		          <schemaLanguage>WSDL</schemaLanguage>
 		          <generateDirectory>${project.basedir}/src/main/java</generateDirectory>
