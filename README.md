@@ -1,6 +1,6 @@
 # spring_soap
 
-run com.e_booking.schema.Application file
+run com.e_booking.schema.Application file <br/>
 request with xml files;
 
 curl --header "content-type: text/xml" -d @list.xml http://localhost:8080/ws <br/>
