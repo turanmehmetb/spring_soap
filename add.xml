@@ -1,0 +1,16 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://e-booking.com/schema/rental">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:AddReservation>
+        	<gs:reservation>
+		        <gs:pickupTime>11</gs:pickupTime>
+		        <gs:pickupLocation>ankara</gs:pickupLocation>
+		        <gs:dropoffTime>12</gs:dropoffTime>
+		        <gs:dropoffLocation>ankara</gs:dropoffLocation>
+		        <gs:brand>Honda</gs:brand>
+		        <gs:model>Civic</gs:model>        
+        	</gs:reservation>
+        </gs:AddReservation>
+    </soapenv:Body>
+</soapenv:Envelope>

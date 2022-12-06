@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://e-booking.com/schema/rental">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:CancelRequest>
+        <gs:reservationId>0</gs:reservationId>
+        </gs:CancelRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
